@@ -2,25 +2,9 @@
 // AUTH (Authentication) Module
 // Menangani login, logout, dan manajemen sesi pengguna.
 // =================================================================
+import { api } from './api.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Cek di halaman mana kita berada
-    const isLoginPage = document.querySelector('body .login-container');
-    const isAppPage = document.querySelector('body .app-container');
-
-    if (isLoginPage) {
-        // Jika kita di halaman login, jalankan fungsi untuk login
-        setupLoginPage();
-    }
-    
-    if (isAppPage) {
-        // Jika kita di halaman aplikasi, cek apakah pengguna sudah login
-        checkSession();
-    }
-});
-
-
-function setupLoginPage() {
+export function setupLoginPage() {
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', async (event) => {
@@ -54,23 +38,22 @@ function setupLoginPage() {
     }
 }
 
-function checkSession() {
+export function checkSession() {
     const currentUser = sessionStorage.getItem('currentUser');
     if (!currentUser) {
         // Jika tidak ada data user, tendang kembali ke halaman login
         alert('Anda harus login untuk mengakses halaman ini.');
         window.location.href = 'login.html';
-    } else {
-        // Jika ada data user, tampilkan aplikasi
-        document.getElementById('appContainer').style.display = 'flex';
+        return false;
     }
+    return true; // Sesi valid
 }
 
-function getCurrentUser() {
+export function getCurrentUser() {
     return JSON.parse(sessionStorage.getItem('currentUser'));
 }
 
-function logout() {
+export function logout() {
     if (confirm('Apakah Anda yakin ingin keluar?')) {
         // Hapus data user dari session
         sessionStorage.removeItem('currentUser');

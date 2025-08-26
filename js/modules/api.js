@@ -82,7 +82,7 @@ const sampleComplaints = [
 
 
 // Objek API untuk diekspor
-const api = {
+export const api = {
     // Fungsi untuk mendapatkan semua pengguna
     getUsers: () => {
         // Mensimulasikan pengambilan data dari server
@@ -118,6 +118,3 @@ const api = {
         });
     }
 };
-
-// Jika ada file api.js lain yang ingin digabungkan, bisa dilakukan di sini.
-// Namun untuk sekarang, kita hanya gunakan objek 'api' ini.

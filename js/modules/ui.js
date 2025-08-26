@@ -1,9 +1,9 @@
 // =================================================================
 // UI (User Interface) Module
-// Berisi semua fungsi untuk memanipulasi DOM dan tampilan.
+// Berisi semua fungsi untuk memanulasi DOM dan tampilan.
 // =================================================================
 
-const ui = {
+export const ui = {
     // Fungsi untuk menampilkan modal
     showModal: (modalId) => {
         const modal = document.getElementById(modalId);
@@ -52,13 +52,13 @@ const ui = {
                 <td><span class="badge badge-info">${user.role}</span></td>
                 <td><span class="badge badge-${user.status === 'Aktif' ? 'success' : 'danger'}">${user.status}</span></td>
                 <td>
-                    <button class="btn btn-sm btn-primary" title="Edit" onclick="app.editUser(${user.id})">
+                    <button class="btn btn-sm btn-primary" title="Edit">
                         <i class="fas fa-edit"></i>
                     </button>
-                    <button class="btn btn-sm btn-danger" title="Hapus" onclick="app.deleteUser(${user.id})">
+                    <button class="btn btn-sm btn-danger" title="Hapus">
                         <i class="fas fa-trash"></i>
                     </button>
-                    <button class="btn btn-sm btn-warning" title="Reset Password" onclick="app.resetPassword(${user.id})">
+                    <button class="btn btn-sm btn-warning" title="Reset Password">
                         <i class="fas fa-key"></i>
                     </button>
                 </td>
@@ -81,7 +81,7 @@ const ui = {
                 <td><span class="badge badge-${ui.getStatusBadgeClass(complaint.status)}">${ui.getStatusText(complaint.status)}</span></td>
                 <td>${ui.formatDate(complaint.tanggal)}</td>
                 <td>
-                    <button class="btn btn-sm btn-primary" title="Detail" onclick="app.viewComplaintDetail('${complaint.id}')">
+                    <button class="btn btn-sm btn-primary" title="Detail">
                         <i class="fas fa-eye"></i>
                     </button>
                     <button class="btn btn-sm btn-warning" title="Update Status">
