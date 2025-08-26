@@ -1,0 +1,39 @@
+<div class="table-container">
+    <div class="table-header">
+        <input type="text" class="form-control table-search" placeholder="Cari pengguna..." id="userSearch">
+        <div class="table-actions">
+            <button class="btn btn-primary btn-sm" id="addUserModalBtn">
+                <i class="fas fa-plus"></i>
+                Tambah Pengguna
+            </button>
+            <button class="btn btn-success btn-sm" id="exportUsersBtn">
+                <i class="fas fa-download"></i>
+                Export Excel
+            </button>
+            <button class="btn btn-danger btn-sm" id="bulkDeleteUsersBtn">
+                <i class="fas fa-trash"></i>
+                Hapus Terpilih
+            </button>
+        </div>
+    </div>
+    <table class="table" id="usersTable">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="selectAllUsers"></th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>NIK</th>
+                <th>Telepon</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="usersTableBody">
+            </tbody>
+    </table>
+    <div class="table-pagination">
+        <div class="pagination-info" id="usersPaginationInfo"></div>
+        <div class="pagination-controls" id="usersPaginationControls"></div>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+<div class="modal" id="addUserModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Tambah Pengguna Baru</h3>
+            <button class="modal-close" onclick="ui.hideModal('addUserModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="addUserForm">
+                <div class="form-group">
+                    <label class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" name="nama" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">NIK</label>
+                    <input type="text" class="form-control" name="nik" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Telepon</label>
+                    <input type="tel" class="form-control" name="telepon" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Role</label>
+                    <select class="form-control" name="role" required>
+                        <option value="">Pilih Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="operator">Operator</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" required>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" onclick="ui.hideModal('addUserModal')">Batal</button>
+            <button class="btn btn-primary" id="saveUserButton">Simpan</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="addComplaintModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Tambah Pengaduan Baru</h3>
+            <button class="modal-close" onclick="ui.hideModal('addComplaintModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="addComplaintForm">
+                <div class="form-group">
+                    <label class="form-label">Judul Pengaduan</label>
+                    <input type="text" class="form-control" name="judul" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Kategori</label>
+                    <select class="form-control" name="kategori" required>
+                        <option value="">Pilih Kategori</option>
+                        <option value="jalan">Jalan Rusak</option>
+                        <option value="drainase">Drainase</option>
+                        <option value="lampu">Lampu Jalan</option>
+                        <option value="trotoar">Trotoar</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Deskripsi</label>
+                    <textarea class="form-control" name="deskripsi" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Lokasi</label>
+                    <input type="text" class="form-control" name="lokasi" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nama Pelapor</label>
+                    <input type="text" class="form-control" name="pelapor" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Telepon Pelapor</label>
+                    <input type="tel" class="form-control" name="telepon_pelapor" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Upload Foto</label>
+                    <div class="file-upload" onclick="document.getElementById('complaintPhoto').click()">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: var(--gray-400); margin-bottom: 1rem;"></i>
+                        <p>Klik untuk upload foto atau drag & drop</p>
+                        <input type="file" id="complaintPhoto" accept="image/*" multiple>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" onclick="ui.hideModal('addComplaintModal')">Batal</button>
+            <button class="btn btn-primary" id="saveComplaintButton">Simpan</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="complaintDetailModal">
+    <div class="modal-content" style="max-width: 800px;">
+        <div class="modal-header">
+            <h3 class="modal-title">Detail Pengaduan</h3>
+            <button class="modal-close" onclick="ui.hideModal('complaintDetailModal')">&times;</button>
+        </div>
+        <div class="modal-body" id="complaintDetailContent">
+            </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" onclick="ui.hideModal('complaintDetailModal')">Tutup</button>
+            <button class="btn btn-warning">Update Status</button>
+            <button class="btn btn-success">Cetak PDF</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="helpModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Pusat Bantuan</h3>
+            <button class="modal-close" onclick="ui.hideModal('helpModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h4>Frequently Asked Questions (FAQ)</h4>
+            <div style="margin-top: 1rem;">
+                <strong>Q: Bagaimana cara menambah pengguna baru?</strong>
+                <p>A: Klik menu "Manajemen Pengguna", lalu klik tombol "Tambah Pengguna". Isi formulir yang muncul dan simpan.</p>
+            </div>
+            <div style="margin-top: 1rem;">
+                <strong>Q: Bagaimana cara melihat detail pengaduan?</strong>
+                <p>A: Pada tabel pengaduan, klik tombol biru dengan ikon mata pada baris pengaduan yang ingin Anda lihat.</p>
+            </div>
+            <hr style="margin: 1.5rem 0;">
+            <h4>Kontak Dukungan</h4>
+            <p>Jika Anda mengalami kendala teknis, silakan hubungi tim IT melalui email di <a href="mailto:it.support@disperkim.garut.go.id">it.support@disperkim.garut.go.id</a>.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" onclick="ui.hideModal('helpModal')">Mengerti</button>
+        </div>
+    </div>
+</div>

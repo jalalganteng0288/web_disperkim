@@ -1,0 +1,38 @@
+<div class="header-left">
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    <h1 class="header-title" id="pageTitle">Dashboard</h1>
+</div>
+<div class="header-right">
+    <button class="notification-btn" id="notificationBtn">
+        <i class="fas fa-bell"></i>
+        <span class="notification-badge" id="notificationBadge">3</span>
+    </button>
+    <div class="user-menu" id="userMenu">
+        <div class="user-avatar">
+            <i class="fas fa-user"></i>
+        </div>
+        <div>
+            <div style="font-weight: 600; font-size: 0.875rem;" id="userName">Admin User</div>
+            <div style="font-size: 0.75rem; color: var(--gray-500);" id="userRole">Super Admin</div>
+        </div>
+        <i class="fas fa-chevron-down" style="margin-left: 0.5rem; color: var(--gray-400);"></i>
+
+        <div class="user-dropdown" id="userDropdown">
+            <div class="user-dropdown-header">
+                <div style="font-weight: 600;" id="dropdownUserName">Admin User</div>
+                <div style="font-size: 0.8rem; color: var(--gray-500);" id="dropdownUserEmail">admin@disperkim.garut.go.id</div>
+            </div>
+            <a href="#" data-page="settings" class="nav-link-dropdown">
+                <i class="fas fa-user-cog"></i> Profil & Pengaturan
+            </a>
+            <a href="#" id="helpButton">
+                <i class="fas fa-life-ring"></i> Pusat Bantuan
+            </a>
+            <a href="#" class="logout" id="logoutButton">
+                <i class="fas fa-sign-out-alt"></i> Keluar
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-icon primary">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="stat-content">
+            <h3 id="totalComplaints">0</h3>
+            <p>Total Pengaduan</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon success">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="stat-content">
+            <h3 id="resolvedComplaints">0</h3>
+            <p>Pengaduan Selesai</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon warning">
+            <i class="fas fa-clock"></i>
+        </div>
+        <div class="stat-content">
+            <h3 id="pendingComplaints">0</h3>
+            <p>Menunggu Proses</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-icon danger">
+            <i class="fas fa-users"></i>
+        </div>
+        <div class="stat-content">
+            <h3 id="totalUsers">0</h3>
+            <p>Total Pengguna</p>
+        </div>
+    </div>
+</div>
+
+<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Statistik Pengaduan Bulanan</h3>
+        </div>
+        <div class="card-body">
+            <div class="chart-container">
+                <canvas id="complaintsChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Pengaduan Terbaru</h3>
+        </div>
+        <div class="card-body" id="recentComplaints">
+            </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Quick Actions</h3>
+    </div>
+    <div class="card-body">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <button class="btn btn-primary" id="addComplaintBtn">
+                <i class="fas fa-plus"></i>
+                Tambah Pengaduan
+            </button>
+            <button class="btn btn-success" id="addUserBtn">
+                <i class="fas fa-user-plus"></i>
+                Tambah Pengguna
+            </button>
+            <button class="btn btn-warning" id="generateReportBtn">
+                <i class="fas fa-file-pdf"></i>
+                Generate Laporan
+            </button>
+            <button class="btn btn-info" id="sendBroadcastBtn">
+                <i class="fas fa-broadcast-tower"></i>
+                Kirim Broadcast
+            </button>
+        </div>
+    </div>
+</div>
